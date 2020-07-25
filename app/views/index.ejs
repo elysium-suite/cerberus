@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "UTF-8">
+      <title>Cerberus</title>
+
+      <script src="../dist/master-bundle.js"></script>
+   </head>
+
+   <body>
+      <div id="app">
+         <div v-if="currentView === 'setFileServer'">
+            <%- include setFileServer.ejs %>
+         </div>
+
+         <div v-if="currentView === 'imageConfig'">
+            <%- include imageConfig.ejs %>
+         </div>
+
+         <div v-if="currentView === 'releasePage'">
+            <%- include releasePage.ejs %>
+         </div>
+
+         <div v-if="currentView === 'vulnConfig'">
+            <%- include vulnConfig.ejs %>
+         </div>
+      </div>
+   </body>
+</html>
