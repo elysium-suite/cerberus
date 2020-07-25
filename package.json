@@ -27,7 +27,6 @@
     "file-loader": "^6.0.0"
   },
   "dependencies": {
-    "ejs-electron": "^2.1.0",
-    "vue": "^2.6.11"
+    "ejs-electron": "^2.1.0"
   }
 }
