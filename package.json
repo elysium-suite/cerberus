@@ -23,11 +23,11 @@
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
-    "webpack-node-externals": "^2.5.0"
+    "webpack-node-externals": "^2.5.0",
+    "file-loader": "^6.0.0"
   },
   "dependencies": {
     "ejs-electron": "^2.1.0",
-    "file-loader": "^6.0.0",
     "vue": "^2.6.11"
   }
 }
