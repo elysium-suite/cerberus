@@ -1,8 +1,12 @@
 @font-face {
-    font-family: mainFont;
-    src: url('../assets/Raleway.ttf');
+  font-family: mainFont;
+  src: url("../assets/Raleway.ttf");
 }
 
 body {
-    font-family: 'mainFont';
+  font-family: "mainFont", sans-serif;
+}
+
+li {
+  cursor: pointer;
 }

@@ -1,23 +1,34 @@
-import Vue from './libs/vue';
+import Vue from "./libs/vue";
 
-import '../stylesheets/master.css';
+import "../stylesheets/master.css";
 
 var app;
 
 window.onload = () => {
-    app = new Vue({
-        el: "#app",
-        data: {
-            "currentView": "setFileServer"
-        }
-    })
+  app = new Vue({
+    el: "#app",
+    data: {
+      currentView: "setFileServer",
+    },
+  });
 
-    main();
-}
+  main();
+};
 
 const main = () => {
-    //Example transition
-    document.getElementById("testBtn").onclick = () => {
-        app.currentView = "releasePage";
-    }
-}
+  document.getElementById("setFileServer").onclick = () => {
+    app.currentView = "setFileServer";
+  };
+
+  document.getElementById("releasePage").onclick = () => {
+    app.currentView = "releasePage";
+  };
+
+  document.getElementById("imageConfig").onclick = () => {
+    app.currentView = "imageConfig";
+  };
+
+  document.getElementById("vulnConfig").onclick = () => {
+    app.currentView = "vulnConfig";
+  };
+};
