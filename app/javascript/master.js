@@ -38,4 +38,4 @@ const navBar = () => {
             navBar();
         }, 500);
     }
-
+}
