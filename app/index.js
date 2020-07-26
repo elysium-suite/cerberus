@@ -6,6 +6,7 @@ function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 1100,
     height: 650,
+    icon: __dirname + '/assets/pacman.png',
     webPreferences: {
       nodeIntegration: true,
     },
