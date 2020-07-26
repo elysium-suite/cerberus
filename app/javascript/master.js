@@ -12,23 +12,30 @@ window.onload = () => {
     },
   });
 
-  main();
-};
+    setFileServer();
+    navBar();
+}
 
-const main = () => {
-  document.getElementById("setFileServer").onclick = () => {
-    app.currentView = "setFileServer";
-  };
+const setFileServer = () => {
+}
 
-  document.getElementById("releasePage").onclick = () => {
-    app.currentView = "releasePage";
-  };
+const releasePage = () => {
+}
 
-  document.getElementById("imageConfig").onclick = () => {
-    app.currentView = "imageConfig";
-  };
+const navBar = () => {
+    document.getElementById("testBtn").onclick = () => {
+        app.currentView = "releasePage";
 
-  document.getElementById("vulnConfig").onclick = () => {
-    app.currentView = "vulnConfig";
-  };
-};
+        setTimeout(() => {
+            navBar();
+        }, 500);
+    }
+
+    document.getElementById("testBtn1").onclick = () => {
+        app.currentView = "setFileServer";
+
+        setTimeout(() => {
+            navBar();
+        }, 500);
+    }
+
