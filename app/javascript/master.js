@@ -1,16 +1,16 @@
-import Vue from './libs/vue';
+import Vue from "./libs/vue";
 
-import '../stylesheets/master.css';
+import "../stylesheets/master.css";
 
 var app;
 
 window.onload = () => {
-    app = new Vue({
-        el: "#app",
-        data: {
-            "currentView": "setFileServer"
-        }
-    })
+  app = new Vue({
+    el: "#app",
+    data: {
+      currentView: "setFileServer",
+    },
+  });
 
     setFileServer();
     navBar();
@@ -38,4 +38,4 @@ const navBar = () => {
             navBar();
         }, 500);
     }
-}
+

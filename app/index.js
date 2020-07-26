@@ -1,6 +1,6 @@
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
-const ejse = require('ejs-electron');
+const ejse = require("ejs-electron");
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
@@ -14,7 +14,7 @@ function createWindow() {
   //mainWindow.removeMenu();
   //mainWindow.webContents.on("devtools-opened", () => {mainWindow.webContents.closeDevTools(); });
 
-  mainWindow.loadURL('file://' + __dirname + '/views/index.ejs');
+  mainWindow.loadURL("file://" + __dirname + "/views/index.ejs");
 }
 
 app.whenReady().then(() => {
