@@ -1,9 +1,13 @@
 <div>
   <h1 class="title">Set File Server</h1>
 
-  <form>
-    <input id=serverUrl type=text>
-    <button type="submit">Set Server</button>
-  </form>
+  <input v-model="fileServerData.fileServerURL" type=text>
+  <br>
+  <input v-model="fileServerData.fileServerPassword" type=text>
+  <br>
+  <button type="submit" id="setServer">Set Server</button>
+
+
+  <p id="status" style="color: red"></p>
 
 </div>
