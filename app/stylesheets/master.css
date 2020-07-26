@@ -1,23 +1,31 @@
 @font-face {
   font-family: mainFont;
-  src: url("../assets/Raleway.ttf");
+  src: url("../assets/Cervo-Thin.otf");
 }
+
+[v-cloak] {display: none}
 
 body {
   font-family: "mainFont", sans-serif;
+  margin: 0;
+  background-color: #A8D0E6;
 }
-.nav {
-  border-width: 1px 0;
-  list-style: none;
-  float: right;
-  padding: 0;
+
+.container {
   text-align: center;
 }
-.nav li {
-  display: inline;
-  cursor: pointer;
+
+.container .title {
+  color: white;
+  font: 30px;
+  font-weight: 400;
 }
-.nav a {
-  display: inline-block;
-  padding: 10px;
+
+.fade-enter-active, .fade-leave-active {
+  transition-property: opacity;
+  transition-duration: .5s;
+}
+
+.fade-enter, .fade-leave-active {
+  opacity: 0
 }

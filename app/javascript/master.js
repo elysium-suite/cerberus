@@ -1,6 +1,7 @@
 import Vue from "./libs/vue";
 
 import "../stylesheets/master.css";
+import "../stylesheets/nav.css"
 
 var app;
 
@@ -8,7 +9,7 @@ window.onload = () => {
   app = new Vue({
     el: "#app",
     data: {
-      currentView: "setFileServer",
+      currentView: "setFileServer"
     },
   });
 
@@ -23,19 +24,41 @@ const releasePage = () => {
 }
 
 const navBar = () => {
-    document.getElementById("testBtn").onclick = () => {
-        app.currentView = "releasePage";
+    var currentTransition;
 
-        setTimeout(() => {
-            navBar();
-        }, 500);
+    document.getElementById("setFileServer").onclick = () => {
+        app.currentView = "";
+
+        clearTimeout(currentTransition);
+        currentTransition = setTimeout(()=>{
+            app.currentView = "setFileServer";
+        }, 500)
     }
 
-    document.getElementById("testBtn1").onclick = () => {
-        app.currentView = "setFileServer";
+    document.getElementById("vulnConfig").onclick = () => {
+        app.currentView = "";
 
-        setTimeout(() => {
-            navBar();
-        }, 500);
+        clearTimeout(currentTransition);
+        currentTransition = setTimeout(()=>{
+            app.currentView = "vulnConfig";
+        }, 500)
+    }
+
+    document.getElementById("imageConfig").onclick = () => {
+        app.currentView = "";
+
+        clearTimeout(currentTransition);
+        currentTransition = setTimeout(()=>{
+            app.currentView = "imageConfig";
+        }, 500)
+    }
+
+    document.getElementById("releasePage").onclick = () => {
+        app.currentView = "";
+
+        clearTimeout(currentTransition);
+        currentTransition = setTimeout(()=>{
+            app.currentView = "releasePage";
+        }, 500)
     }
 }

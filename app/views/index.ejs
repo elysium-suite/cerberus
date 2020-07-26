@@ -8,22 +8,32 @@
   </head>
 
   <body>
-    <div id="app">
-      <div v-if="currentView === 'setFileServer'">
-        <%- include setFileServer.ejs %>
-      </div>
+    <div id="app" v-cloak>
+      <%- include nav.ejs %>
 
-      <div v-if="currentView === 'imageConfig'">
-        <%- include imageConfig.ejs %>
-      </div>
+      <transition name="fade">
+        <div v-if="currentView === 'setFileServer'" class="container">
+          <%- include setFileServer.ejs %>
+        </div>
+      </transition>
 
-      <div v-if="currentView === 'releasePage'">
-        <%- include releasePage.ejs %>
-      </div>
+      <transition name="fade">
+        <div v-if="currentView === 'imageConfig'" class="container">
+          <%- include imageConfig.ejs %>
+        </div>
+      </transition>
 
-      <div v-if="currentView === 'vulnConfig'">
-        <%- include vulnConfig.ejs %>
-      </div>
+      <transition name="fade">
+        <div v-if="currentView === 'releasePage'" class="container">
+          <%- include releasePage.ejs %>
+        </div>
+      </transition>
+
+      <transition name="fade">
+        <div v-if="currentView === 'vulnConfig'" class="container">
+          <%- include vulnConfig.ejs %>
+        </div>
+      </transition>
     </div>
   </body>
 </html>

@@ -27,6 +27,7 @@
     "file-loader": "^6.0.0"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "ejs-electron": "^2.1.0"
   }
 }
