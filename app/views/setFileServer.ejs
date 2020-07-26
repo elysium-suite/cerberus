@@ -1,13 +1,13 @@
 <div>
   <h1 class="title">Set File Server</h1>
-
-  <input v-model="fileServerData.fileServerURL" type=text>
-  <br>
-  <input v-model="fileServerData.fileServerPassword" type=text>
-  <br>
-  <button type="submit" id="setServer">Set Server</button>
-
-
-  <p id="status" style="color: red"></p>
+  
+  <form>
+    <input v-model="fileServerData.fileServerURL" class="input-server" placeholder="File Server" id="serverUrl" type=text>
+    <br>
+    <input v-model="fileServerData.fileServerPassword" class="input-server" placeholder="Password" type=text>
+    <br>
+    <button class="server-button" type="submit" id="setServer">Set Server</button>
+    <p id="status" style="color: red"></p>
+  </form>
 
 </div>

@@ -3,12 +3,14 @@
   src: url("../assets/Cervo-Thin.otf");
 }
 
-[v-cloak] {display: none}
+[v-cloak] {
+  display: none;
+}
 
 body {
   font-family: "mainFont", sans-serif;
   margin: 0;
-  background-color: #A8D0E6;
+  background-color: #a8d0e6;
 }
 
 .container {
@@ -21,11 +23,46 @@ body {
   font-weight: 400;
 }
 
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition-property: opacity;
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
-.fade-enter, .fade-leave-active {
-  opacity: 0
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+.server-button {
+  appearance: none;
+  outline: 0;
+  background-color: white;
+  border: 0;
+  padding: 10px 15px;
+  border-radius: 3px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 18px;
+  transition-duration: 0.25s;
+}
+
+.input-server {
+  display: block;
+  appearance: none;
+  outline: 0;
+  border: 1px solid fade(white, 40%);
+  background-color: fade(white, 20%);
+  width: 250px;
+
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+
+  color: black;
+
+  transition-duration: 0.25s;
+  font-weight: 300;
 }
