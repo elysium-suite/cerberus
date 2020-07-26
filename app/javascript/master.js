@@ -12,12 +12,30 @@ window.onload = () => {
         }
     })
 
-    main();
+    setFileServer();
+    navBar();
 }
 
-const main = () => {
-    //Example transition
+const setFileServer = () => {
+}
+
+const releasePage = () => {
+}
+
+const navBar = () => {
     document.getElementById("testBtn").onclick = () => {
         app.currentView = "releasePage";
+
+        setTimeout(() => {
+            navBar();
+        }, 500);
+    }
+
+    document.getElementById("testBtn1").onclick = () => {
+        app.currentView = "setFileServer";
+
+        setTimeout(() => {
+            navBar();
+        }, 500);
     }
 }
