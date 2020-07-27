@@ -44,7 +44,7 @@ const setFileServer = () => {
         var os = process.platform;
 
         if(url != "" && password != ""){
-            if(true){
+            if(/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/.test(url)){
                 axios({
                     method: "GET",
                     url: url + `?os=${os}&pass=${password}`,
