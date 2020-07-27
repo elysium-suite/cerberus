@@ -1,9 +1,6 @@
 import Vue from "./libs/vue";
-import axios from 'axios';
-import * as $ from 'jquery';
-import fs from 'fs';
-import unzipper from 'unzipper';
-import request from 'request';
+
+import setFileServer from './pages/fileServer';
 
 import "../stylesheets/master.css";
 import "../stylesheets/nav.css"
@@ -30,42 +27,10 @@ window.onload = () => {
   });
 
     setTimeout(() => {
-        setFileServer();
+        setFileServer(app, fileSysBase);
     }, 500);
-    navBar();
-}
 
-const setFileServer = () => {
-    $("#status").fadeOut();
-
-    document.getElementById("setServer").onclick = () => {
-        var url = app.fileServerData.fileServerURL;
-        var password = app.fileServerData.fileServerPassword;
-        var os = process.platform;
-
-        if(url != "" && password != ""){
-            if(/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/.test(url)){
-                axios({
-                    method: "GET",
-                    url: url + `?os=${os}&pass=${password}`,
-                }).then(function(response){
-                    request(url + `?os=${os}&pass=${password}`).pipe(unzipper.Extract({ path: os == "win32" ? "C:\\" : "/opt/" })).on('close', ()=>{
-                        fs.renameSync(os == "win32" ? "C:\\aeacus-win32" : "/opt/aeacus-linux", os == "win32" ? "C:\\aeacus" : "/opt/aeacus")
-                    })
-                })
-                .catch(()=>{
-                    jqueryFadeIn("status", 'Invalid Password')
-                })
-            }else{
-                jqueryFadeIn("status", "URL is not valid")
-            }
-        }else{
-            jqueryFadeIn("status", "One or more forms are empty");
-        }
-    }
-}
-
-const releasePage = () => {
+    navBar(app);
 }
 
 const navBar = () => {
@@ -77,6 +42,7 @@ const navBar = () => {
         clearTimeout(currentTransition);
         currentTransition = setTimeout(()=>{
             app.currentView = "setFileServer";
+            setFileServer(app, fileSysBase);
         }, 500)
     }
 
@@ -106,12 +72,4 @@ const navBar = () => {
             app.currentView = "releasePage";
         }, 500)
     }
-}
-
-const jqueryFadeIn = (id, msg) => {
-    document.getElementById(id).innerHTML = msg;
-    $("#" + id).fadeIn();
-    setTimeout(()=>{
-        $("#" + id).fadeOut();
-    }, 3000);
 }
