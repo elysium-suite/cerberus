@@ -4,7 +4,7 @@
   "description": "",
   "main": "app/index.js",
   "scripts": {
-    "start": "npx webpack --config webpack.config.js && DEV=1 electron app",
+    "start": "npx webpack --config webpack.config.js && DEV=1 sudo npx electron --no-sandbox app",
     "make": "npx webpack --config webpack.config.js && npx electron-packager . Cerberus --ignore='(\\.gitignore)|(\\.eslintrc\\.json)|(package-lock\\.json)|(webpack\\.config\\.js)' --overwrite"
   },
   "repository": {
@@ -31,6 +31,7 @@
     "ejs-electron": "^2.1.0",
     "jquery": "^3.5.1",
     "request": "^2.88.2",
+    "toml": "^3.0.0",
     "unzipper": "^0.10.11"
   }
 }

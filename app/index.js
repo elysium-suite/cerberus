@@ -8,10 +8,13 @@ function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 1100,
     height: 650,
+    backgroundColor: '#00000000',
     icon: __dirname + '/assets/pacman.png',
     webPreferences: {
       nodeIntegration: true,
     },
+    frame: false,
+    transparent: true
   });
 
   //mainWindow.removeMenu();
@@ -21,7 +24,9 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
-  createWindow();
+  setTimeout(() => {
+    createWindow();
+  }, 1000);
 
   app.on("activate", function () {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();

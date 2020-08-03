@@ -11,9 +11,9 @@
 
 .nav hr {
     border-radius: 7px;
-    border: 0px solid white;
+    border: 0px solid #1995AD;
     height: 1px;
-    background: #ffffff;
+    background: #1995AD;
     width: 88%;
 
     margin-top: -7px;
@@ -32,7 +32,7 @@
     letter-spacing: 2px;
     font-weight: 500;
     position: relative;
-    color: #FEFFFF;
+    color: #1995AD;
     text-transform: uppercase;
     text-align: center;
     padding: 5px 1px;
@@ -49,13 +49,13 @@
     height: 1.3px;
     top: 100%;
     left: 0;
-    background: white;
+    background: #1995AD;
     transition: transform 0.5s;
     transform: scaleX(0);
     transform-origin: right;
 }
 .nav p:hover {
-    color: #f3f3f3;
+    color: #A1D6E2;
 }
 .nav p:hover::after {
     transform: scaleX(1);

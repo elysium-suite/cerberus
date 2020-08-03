@@ -10,7 +10,47 @@
 body {
   font-family: "mainFont", sans-serif;
   margin: 0;
-  background-color: #a8d0e6;
+  overflow: hidden;
+}
+
+.appContainer {
+  background-color: #F1F1F2;
+  height: 100vh;
+  width: 100vw;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 12px 12px 6px -6px rgba(0, 0, 0, 0.4);
+}
+
+.appDragBar {
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  height: 5vh;
+
+  display: flex;
+  justify-content: flex-end;
+
+  -webkit-app-region: drag;
+}
+
+.windowControls {
+  -webkit-app-region: no-drag;
+
+  margin-top: 0.5vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+
+  width: 1em;
+  height: 1em;
+}
+
+.appContainer .windowControls svg:hover {
+  stroke: #A1D6E2;
 }
 
 .container {
@@ -18,7 +58,7 @@ body {
 }
 
 .container .title {
-  color: white;
+  color: #1995AD;
   font: 30px;
   font-weight: 400;
 }
@@ -32,37 +72,4 @@ body {
 .fade-enter,
 .fade-leave-active {
   opacity: 0;
-}
-.server-button {
-  appearance: none;
-  outline: 0;
-  background-color: white;
-  border: 0;
-  padding: 10px 15px;
-  border-radius: 3px;
-  width: 250px;
-  cursor: pointer;
-  font-size: 18px;
-  transition-duration: 0.25s;
-}
-
-.input-server {
-  display: block;
-  appearance: none;
-  outline: 0;
-  border: 1px solid fade(white, 40%);
-  background-color: fade(white, 20%);
-  width: 250px;
-
-  border-radius: 3px;
-  padding: 10px 15px;
-  margin: 0 auto 10px auto;
-  display: block;
-  text-align: center;
-  font-size: 18px;
-
-  color: black;
-
-  transition-duration: 0.25s;
-  font-weight: 300;
 }

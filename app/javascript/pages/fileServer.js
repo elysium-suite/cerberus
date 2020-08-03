@@ -3,6 +3,7 @@ import request from 'request';
 import fs from 'fs';
 import axios from 'axios';
 import * as $ from 'jquery';
+import toml from 'toml';
 
 import jqueryFadeIn from '../utils/jqueryFadeIn';
 
@@ -77,10 +78,16 @@ const setFileServer = (app, fileSysBase) => {
                             fs.rmdirSync(aeacusDir, {recursive: true});
 
                             fs.renameSync(os == "win32" ? "C:\\aeacus-win32" : "/opt/aeacus-linux", aeacusDir);
+
+                            app.configFile = toml.parse(fs.readFileSync(aeacusDir + "scoring.conf"))
+                            app.readMeFile = fs.readFileSync(aeacusDir + "scoring.conf", "utf-8");
                         }else{
                             fs.renameSync(os == "win32" ? "C:\\aeacus-win32" : "/opt/aeacus-linux", aeacusDir);
                             fs.writeFileSync(aeacusDir + "scoring.conf", defaultScoringConf);
                             fs.writeFileSync(aeacusDir + "ReadMe.conf", defaultReadMe);
+
+                            app.configFile = toml.parse(fs.readFileSync(aeacusDir + "scoring.conf"))
+                            app.readMeFile = fs.readFileSync(aeacusDir + "scoring.conf", "utf-8");
                         }
                     })
                 })
