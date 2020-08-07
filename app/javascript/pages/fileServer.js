@@ -59,6 +59,9 @@ const setFileServer = (app, fileSysBase) => {
     $("#status").fadeOut();
 
     document.getElementById("setServer").onclick = () => {
+        app.loadingOverlay = true;
+        app.loadingOverlayMsg = "Retrieving and installing Aeacus"
+
         var url = app.fileServerData.fileServerURL;
         var password = app.fileServerData.fileServerPassword;
         var os = process.platform;
@@ -81,6 +84,8 @@ const setFileServer = (app, fileSysBase) => {
 
                             app.configFile = toml.parse(fs.readFileSync(aeacusDir + "scoring.conf"))
                             app.readMeFile = fs.readFileSync(aeacusDir + "scoring.conf", "utf-8");
+
+                            app.loadingOverlay = false;
                         }else{
                             fs.renameSync(os == "win32" ? "C:\\aeacus-win32" : "/opt/aeacus-linux", aeacusDir);
                             fs.writeFileSync(aeacusDir + "scoring.conf", defaultScoringConf);
@@ -88,17 +93,22 @@ const setFileServer = (app, fileSysBase) => {
 
                             app.configFile = toml.parse(fs.readFileSync(aeacusDir + "scoring.conf"))
                             app.readMeFile = fs.readFileSync(aeacusDir + "scoring.conf", "utf-8");
+
+                            app.loadingOverlay = false;
                         }
                     })
                 })
                 .catch(()=>{
                     jqueryFadeIn("status", 'Invalid Password')
+                    app.loadingOverlay = false;
                 })
             }else{
                 jqueryFadeIn("status", "URL is not valid")
+                app.loadingOverlay = false;
             }
         }else{
-            jqueryFadeIn("status", "One or more forms are empty");
+            jqueryFadeIn("status", "One or more forms are empty")
+            app.loadingOverlay = false;
         }
     }
 }

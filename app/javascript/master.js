@@ -3,10 +3,13 @@ const {BrowserWindow} = require('electron').remote;
 
 import setFileServer from './pages/fileServer';
 import imageConfig from './pages/imageConfig';
+import settings from './pages/settings';
 
 import "../stylesheets/master.css";
 import "../stylesheets/nav.css";
 import "../stylesheets/fileServer.css";
+import "../stylesheets/loadingOverlay.css";
+import "../stylesheets/settings.css";
 
 var app;
 var fileSysBase;
@@ -23,6 +26,8 @@ window.onload = () => {
     el: "#app",
     data: {
       currentView: "setFileServer",
+      loadingOverlay: false,
+      loadingOverlayMsg: "",
       fileServerData: {
         fileServerURL: "",
         fileServerPassword: ""
@@ -35,7 +40,7 @@ window.onload = () => {
     setTimeout(() => {
         setFileServer(app, fileSysBase);
         titleBar();
-    }, 500);
+    }, 300);
 
     navBar();
 }
@@ -51,8 +56,8 @@ const navBar = () => {
             app.currentView = "setFileServer";
             setTimeout(()=>{
                 setFileServer(app, fileSysBase);
-            }, 500)
-        }, 500)
+            }, 300)
+        }, 300)
     }
 
     document.getElementById("vulnConfig").onclick = () => {
@@ -61,7 +66,7 @@ const navBar = () => {
         clearTimeout(currentTransition);
         currentTransition = setTimeout(()=>{
             app.currentView = "vulnConfig";
-        }, 500)
+        }, 300)
     }
 
     document.getElementById("imageConfig").onclick = () => {
@@ -72,8 +77,8 @@ const navBar = () => {
             app.currentView = "imageConfig";
             setTimeout(()=>{
                 imageConfig(app, fileSysBase);
-            }, 500)
-        }, 500)
+            }, 300)
+        }, 300)
     }
 
     document.getElementById("releasePage").onclick = () => {
@@ -82,7 +87,19 @@ const navBar = () => {
         clearTimeout(currentTransition);
         currentTransition = setTimeout(()=>{
             app.currentView = "releasePage";
-        }, 500)
+        }, 300)
+    }
+
+    document.getElementById("settings").onclick = () => {
+        app.currentView = "";
+
+        clearTimeout(currentTransition);
+        currentTransition = setTimeout(()=>{
+            app.currentView = "settings";
+            setTimeout(()=>{
+                settings();
+            }, 300)
+        }, 300)
     }
 }
 

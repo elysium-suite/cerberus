@@ -1,3 +1,5 @@
+@import "./colors.css";
+
 .nav ul {
     width: 95%;
     list-style-type: none;
@@ -11,9 +13,9 @@
 
 .nav hr {
     border-radius: 7px;
-    border: 0px solid #1995AD;
+    border: 0px solid var(--primary);
     height: 1px;
-    background: #1995AD;
+    background: var(--primary);
     width: 88%;
 
     margin-top: -7px;
@@ -21,9 +23,9 @@
 
 .nav li {
     display: inline-block;
-    width: 18%;
-    margin-left: 2%;
-    margin-right: 2%;
+    width: 16%;
+    margin-left: 1%;
+    margin-right: 1%;
     padding: 0;
 }
 
@@ -32,7 +34,7 @@
     letter-spacing: 2px;
     font-weight: 500;
     position: relative;
-    color: #1995AD;
+    color: var(--primary);
     text-transform: uppercase;
     text-align: center;
     padding: 5px 1px;
@@ -49,13 +51,13 @@
     height: 1.3px;
     top: 100%;
     left: 0;
-    background: #1995AD;
+    background: var(--primary);
     transition: transform 0.5s;
     transform: scaleX(0);
     transform-origin: right;
 }
 .nav p:hover {
-    color: #A1D6E2;
+    color: var(--secondary);
 }
 .nav p:hover::after {
     transform: scaleX(1);

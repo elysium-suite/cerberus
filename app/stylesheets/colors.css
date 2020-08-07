@@ -1,0 +1,11 @@
+:root{
+    --backgroundColor: #f1f1f2;
+    --primary: #1995AD;
+    --secondary: #A1D6E2;
+}
+
+[data-theme="dark"] {
+    --backgroundColor: #04202C;
+    --primary: #5B7065;
+    --secondary: #304040;
+}

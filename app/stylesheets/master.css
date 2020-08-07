@@ -3,6 +3,8 @@
   src: url("../assets/Cervo-Thin.otf");
 }
 
+@import "./colors.css";
+
 [v-cloak] {
   display: none;
 }
@@ -14,12 +16,14 @@ body {
 }
 
 .appContainer {
-  background-color: #F1F1F2;
+  background-color: var(--backgroundColor);
   height: 100vh;
   width: 100vw;
   border-radius: 6px;
   text-align: center;
   box-shadow: 12px 12px 6px -6px rgba(0, 0, 0, 0.4);
+
+  transition: 200ms ease-in-out;
 }
 
 .appDragBar {
@@ -49,8 +53,12 @@ body {
   height: 1em;
 }
 
+.appContainer .windowControls svg {
+  stroke: var(--primary);
+}
+
 .appContainer .windowControls svg:hover {
-  stroke: #A1D6E2;
+  stroke: var(--secondary);
 }
 
 .container {
@@ -58,15 +66,32 @@ body {
 }
 
 .container .title {
-  color: #1995AD;
+  color: var(--primary);
   font: 30px;
+  font-weight: 400;
+
+  margin-bottom: 7vh;
+}
+
+.container .title::after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 17%;
+  padding-top: 5px;
+  border-bottom: 1px solid var(--primary);
+}
+
+.container .titleSecondary {
+  color: var(--primary);
+  font: 22px;
   font-weight: 400;
 }
 
 .fade-enter-active,
 .fade-leave-active {
   transition-property: opacity;
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
 }
 
 .fade-enter,
