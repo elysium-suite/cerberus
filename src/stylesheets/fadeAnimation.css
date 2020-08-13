@@ -1,0 +1,31 @@
+.transitionDiv {
+  animation-duration: 400ms;
+}
+
+@keyframes fadeInView {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutView {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeInView {
+  opacity: 1;
+  animation-name: fadeInView;
+}
+
+.fadeOutView {
+  opacity: 0;
+  animation-name: fadeOutView;
+}

@@ -1,21 +1,19 @@
 import React, { Component } from 'react'
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 
 import "bootstrap/dist/css/bootstrap.css"
+
 import "../stylesheets/master.css";
-import "../stylesheets/nav.css";
-import "../stylesheets/fileServer.css";
-import "../stylesheets/loadingOverlay.css";
-import "../stylesheets/settings.css";
+import "../stylesheets/page.css";
+import "../stylesheets/fadeAnimation.css";
 
 import DragBar from './components/DragBar';
 import NavBar from './components/NavBar';
 
-import SetFileServer from './components/SetFileServer';
-import ReleasePage from './components/ReleasePage';
-import ImageConfig from './components/ImageConfig';
-import VulnConfig from './components/VulnConfig';
-import Settings from './components/Settings';
+import SetFileServer from './pages/SetFileServer';
+import ReleasePage from './pages/ReleasePage';
+import ImageConfig from './pages/ImageConfig';
+import VulnConfig from './pages/VulnConfig';
+import Settings from './pages/Settings';
 
 export default class App extends Component {
     constructor(props){

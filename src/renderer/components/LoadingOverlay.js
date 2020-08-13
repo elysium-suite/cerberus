@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { css } from '@emotion/core'
 import BeatLoader from "react-spinners/BeatLoader"
 
+import "../../stylesheets/loadingOverlay.css";
+
 export default class LoadingOverlay extends Component {
     render() {
         return (

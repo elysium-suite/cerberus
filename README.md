@@ -2,6 +2,8 @@
 
 For devs:
 
+Linux:
+
 1. sudo su
 2. upgrade to latest version of node
 3. run `yarn`
@@ -10,6 +12,8 @@ For devs:
 6. profit
 
 
-For Windows 
-1. yarn
-2. yarn run win
+Windows:
+
+1. Run CMD or Powershell as admin
+1. run `yarn`
+2. run `yarn run win`

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import "../../stylesheets/nav.css";
+
 export default class NavBar extends Component {
     constructor(props){
         super(props)

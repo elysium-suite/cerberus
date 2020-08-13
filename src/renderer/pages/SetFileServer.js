@@ -5,7 +5,10 @@ import fs from 'fs';
 import axios from 'axios';
 import toml from 'toml';
 
-import LoadingOverlay from './LoadingOverlay';
+import "../../stylesheets/fileServer.css";
+import "../..//stylesheets/status.css";
+
+import LoadingOverlay from '../components/LoadingOverlay';
 
 const defaultScoringConf = `
 name = "ubuntu-18-supercool"

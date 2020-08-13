@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import "../../stylesheets/settings.css";
+
 export default class Settings extends Component {
     constructor(props){
         super(props);

@@ -55,60 +55,10 @@ body {
 }
 
 .appContainer .windowControls svg {
+  cursor: pointer;
   stroke: var(--primary);
 }
 
 .appContainer .windowControls svg:hover {
   stroke: var(--secondary);
-}
-
-.container {
-  text-align: center;
-}
-
-.container .title {
-  color: var(--primary);
-  font-size: 30px;
-  font-weight: 400;
-
-  margin-bottom: 7vh;
-}
-
-.container .title::after {
-  content: "";
-  display: block;
-  margin: 0 auto;
-  width: 17%;
-  padding-top: 5px;
-  border-bottom: 1px solid var(--primary);
-}
-
-.container .titleSecondary {
-  color: var(--primary);
-  font: 22px;
-  font-weight: 400;
-}
-
-.transitionDiv {
-  animation-duration: 400ms;
-}
-
-@keyframes fadeInView {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-}
-
-@keyframes fadeOutView {
-  0% {opacity: 1;}
-  100% {opacity: 0;}
-}
-
-.fadeInView {
-  opacity: 1;
-  animation-name: fadeInView;
-}
-
-.fadeOutView {
-  opacity: 0;
-  animation-name: fadeOutView;
 }
