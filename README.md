@@ -8,3 +8,8 @@ For devs:
 4. exit
 5. yarn run dev
 6. profit
+
+
+For Windows 
+1. yarn
+2. yarn run win

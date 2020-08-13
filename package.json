@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "sudo node ./node_modules/electron-webpack/out/dev/dev-runner.js",
+    "win": "node ./node_modules/electron-webpack/out/dev/dev-runner.js",
     "compile": "electron-webpack",
     "dist": "yarn compile && electron-builder",
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
