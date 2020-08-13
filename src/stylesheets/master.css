@@ -5,23 +5,20 @@
 
 @import "./colors.css";
 
-[v-cloak] {
-  display: none;
-}
-
 body {
   font-family: "mainFont", sans-serif;
   margin: 0;
   overflow: hidden;
+  background-color: transparent;
 }
 
 .appContainer {
   background-color: var(--backgroundColor);
   height: 100vh;
   width: 100vw;
-  border-radius: 6px;
+  border-radius: 0.375rem;
   text-align: center;
-  box-shadow: 12px 12px 6px -6px rgba(0, 0, 0, 0.4);
+  box-shadow: 0.75rem 0.75rem 0.375rem -0.375rem rgba(0, 0, 0, 0.4);
 
   transition: 200ms ease-in-out;
 }
@@ -32,14 +29,16 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
   height: 5vh;
 
   display: flex;
   justify-content: flex-end;
 
   -webkit-app-region: drag;
+
+  z-index: 3;
 }
 
 .windowControls {
@@ -51,6 +50,8 @@ body {
 
   width: 1em;
   height: 1em;
+
+  z-index: 4;
 }
 
 .appContainer .windowControls svg {
@@ -67,7 +68,7 @@ body {
 
 .container .title {
   color: var(--primary);
-  font: 30px;
+  font-size: 30px;
   font-weight: 400;
 
   margin-bottom: 7vh;
@@ -88,13 +89,26 @@ body {
   font-weight: 400;
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition-property: opacity;
-  transition-duration: 0.3s;
+.transitionDiv {
+  animation-duration: 400ms;
 }
 
-.fade-enter,
-.fade-leave-active {
+@keyframes fadeInView {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes fadeOutView {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.fadeInView {
+  opacity: 1;
+  animation-name: fadeInView;
+}
+
+.fadeOutView {
   opacity: 0;
+  animation-name: fadeOutView;
 }

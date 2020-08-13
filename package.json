@@ -1,38 +1,35 @@
 {
-  "name": "cerberus",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app/index.js",
+  "name": "electron-webpack-quick-start",
+  "version": "0.0.0",
+  "license": "MIT",
   "scripts": {
-    "start": "npx webpack --config webpack.config.js && DEV=1 sudo npx electron --no-sandbox app",
-    "make": "npx webpack --config webpack.config.js && npx electron-packager . Cerberus --ignore='(\\.gitignore)|(\\.eslintrc\\.json)|(package-lock\\.json)|(webpack\\.config\\.js)' --overwrite"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alvinzhengq/cerberus.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/alvinzhengq/cerberus/issues"
-  },
-  "devDependencies": {
-    "css-loader": "^4.0.0",
-    "electron": "^9.1.1",
-    "electron-packager": "^15.0.0",
-    "style-loader": "^1.2.1",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12",
-    "webpack-node-externals": "^2.5.0",
-    "file-loader": "^6.0.0"
+    "dev": "sudo node ./node_modules/electron-webpack/out/dev/dev-runner.js",
+    "compile": "electron-webpack",
+    "dist": "yarn compile && electron-builder",
+    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.34",
+    "@types/react-transition-group": "^4.4.0",
     "axios": "^0.19.2",
-    "ejs-electron": "^2.1.0",
+    "bootstrap": "^4.5.2",
+    "fs": "^0.0.1-security",
     "jquery": "^3.5.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-spinners": "^0.9.0",
+    "react-transition-group": "1.x",
+    "reactstrap": "^8.5.1",
     "request": "^2.88.2",
+    "source-map-support": "^0.5.16",
     "toml": "^3.0.0",
-    "tomlify-j0.4": "^3.0.0",
     "unzipper": "^0.10.11"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.10.4",
+    "electron": "8.2.0",
+    "electron-builder": "^22.4.1",
+    "electron-webpack": "^2.8.2",
+    "webpack": "~4.42.1"
   }
 }
