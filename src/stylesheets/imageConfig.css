@@ -1,19 +1,19 @@
 @import './colors.css';
 
 .imageConfig-button {
-    appearance: none;
-    outline: 0;
-    background-color: transparent;
-    color: var(--primary);
-    border: 2px solid var(--primary);
-    padding: 10px 11px;
-    border-radius: 4px;
-    width: 250px;
-    cursor: pointer;
-    font-size: 20px;
-    transition-duration: 0.25s;
+  appearance: none;
+  outline: 0;
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 10px 11px;
+  border-radius: 4px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 20px;
+  transition-duration: 0.25s;
 
-    margin-top: 18px;
+  margin-top: 18px;
 }
 .imageConfig-button:hover {
   background-color: var(--onHover);
