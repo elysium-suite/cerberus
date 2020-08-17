@@ -1,31 +1,27 @@
 @import "./colors.css";
 
-.server-button {
+.imageConfig-button {
     appearance: none;
     outline: 0;
     background-color: transparent;
     color: var(--primary);
     border: 2px solid var(--primary);
-    padding: 10px 15px;
+    padding: 10px 12px;
     border-radius: 4px;
-    width: 310px;
+    width: 250px;
     cursor: pointer;
     font-size: 20px;
     transition-duration: 0.25s;
 
-    margin-top: 30px;
+    margin-top: 20px;
 }
-.server-button:hover{
+.imageConfig-button:hover{
     background-color: var(--onHover);
     color: var(--backgroundColor);
 }
 
-::placeholder{
-    color: var(--primary);
-    transition: 0.25s;
-}
-
-.input-server {
+.imageConfig-input {
+    width: 92%;
     outline: 0;
     background-color: transparent;
     width: 310px;
@@ -42,9 +38,20 @@
     transition-duration: 0.25s;
     font-weight: 300;
 }
-.input-server:focus{
+.imageConfig-input:focus{
     width: 350px;
 }
-.input-server:focus::placeholder{
+.imageConfig-input:focus::placeholder{
     color: transparent;
+}
+
+.imageConfig-label{
+    font-size: 22px;
+    color: var(--primary);
+    width: 8%;
+    margin-left: -3vw;
+}
+
+.errorMessage {
+    color: var(--primary);
 }

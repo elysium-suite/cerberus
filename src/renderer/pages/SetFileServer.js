@@ -4,49 +4,12 @@ import request from 'request';
 import fs from 'fs';
 import axios from 'axios';
 import toml from 'toml';
+import {aeacusDir, defaultReadMe, defaultScoringConf, currentOS, aeacusConfigFile, aeacusReadMeFile} from '../configs';
 
 import "../../stylesheets/fileServer.css";
 import "../..//stylesheets/status.css";
 
 import LoadingOverlay from '../components/LoadingOverlay';
-
-const defaultScoringConf = `
-name = "ubuntu-18-supercool"
-title = "CoolCyberStuff Practice Round"
-user = "coolUser"
-os = "Ubuntu 18.04"
-remote = "https://192.168.1.100"
-password = "HackersArentReal"
-local = "yes"
-enddate = "2020/03/21 15:04:05 PDT"
-nodestroy = "yes"
-`
-
-const defaultReadMe = `
-<p>
-Uncomplicated Firewall (UFW) is the only company
-approved Firewall for use on Linux machines at this time.
-</p>
-<p><b>Critical Services:</b></p>
-    <ul>
-        <li>OpenSSH Server (sshd)</li>
-    </ul>
-<h2>Authorized Administrators and Users</h2>
-<pre>
-<b>Authorized Administrators:</b>
-coolUser (you)
-    password: coolPassword
-bob
-    password: bob
-<b>Authorized Users:</b>
-coolFriend
-awesomeUser
-radUser
-coolGuy
-niceUser
-superCoolDude
-</pre>
-`
 
 function validURL(str) {
     var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
@@ -98,37 +61,37 @@ export default class SetFileServer extends Component {
             buttonClicked: true
         })
 
-        var os = process.platform;
-
         if(this.state.fileServerURL != "" && this.state.fileServerPassword != ""){
             if(validURL(this.state.fileServerURL)){
+                console.log(this.state.fileServerURL + `?os=${currentOS}&pass=${this.state.fileServerPassword}`)
                 axios({
                     method: "GET",
-                    url: this.state.fileServerURL + `?os=${os}&pass=${this.state.fileServerPassword}`,
-                }).then(() => {
-                    var aeacusDir = os == "win32" ? "C:\\aeacus\\" : "/opt/aeacus/";
-
-                    request(this.state.fileServerURL + `?os=${os}&pass=${this.state.fileServerPassword}`).pipe(unzipper.Extract({ path: os == "win32" ? "C:\\" : "/opt/" })).on('close', ()=>{
+                    url: this.state.fileServerURL + `?os=${currentOS}&pass=${this.state.fileServerPassword}`,
+                })
+                .then(() => {
+                    request(this.state.fileServerURL + `?os=${currentOS}&pass=${this.state.fileServerPassword}`).pipe(unzipper.Extract({ path: currentOS == "win32" ? "C:\\" : "/opt/" })).on('close', ()=>{
                         if(fs.existsSync(aeacusDir)){
-                            fs.copyFileSync(aeacusDir + "scoring.conf", os == "win32" ? "C:\\aeacus-win32\\scoring.conf" : "/opt/aeacus-linux/scoring.conf")
-                            fs.copyFileSync(aeacusDir + "ReadMe.conf", os == "win32" ? "C:\\aeacus-win32\\ReadMe.conf" : "/opt/aeacus-linux/ReadMe.conf")
+                            fs.copyFileSync(aeacusConfigFile, currentOS == "win32" ? "C:\\aeacus-win32\\scoring.conf" : "/opt/aeacus-linux/scoring.conf")
+                            fs.copyFileSync(aeacusReadMeFile, currentOS == "win32" ? "C:\\aeacus-win32\\ReadMe.conf" : "/opt/aeacus-linux/ReadMe.conf")
                             fs.rmdirSync(aeacusDir, {recursive: true});
 
-                            fs.renameSync(os == "win32" ? "C:\\aeacus-win32" : "/opt/aeacus-linux", aeacusDir);
+                            fs.renameSync(currentOS == "win32" ? "C:\\aeacus-win32" : "/opt/aeacus-linux", aeacusDir);
 
-                            this.props.setData("readme", toml.parse(fs.readFileSync(aeacusDir + "scoring.conf")))
-                            this.props.setData("configFile", fs.readFileSync(aeacusDir + "scoring.conf", "utf-8"))
+                            this.props.setData("configFile", toml.parse(fs.readFileSync(aeacusConfigFile)))
+                            this.props.setData("readme", fs.readFileSync(aeacusReadMeFile, "utf-8"))
+                            this.props.changeView("imageConfig")
 
                             this.setState({
                                 buttonClicked: false
                             })
                         }else{
-                            fs.renameSync(os == "win32" ? "C:\\aeacus-win32" : "/opt/aeacus-linux", aeacusDir);
-                            fs.writeFileSync(aeacusDir + "scoring.conf", defaultScoringConf);
-                            fs.writeFileSync(aeacusDir + "ReadMe.conf", defaultReadMe);
+                            fs.renameSync(currentOS == "win32" ? "C:\\aeacus-win32" : "/opt/aeacus-linux", aeacusDir);
+                            fs.writeFileSync(aeacusConfigFile, defaultScoringConf);
+                            fs.writeFileSync(aeacusReadMeFile, defaultReadMe);
 
-                            this.props.setData("readme", toml.parse(fs.readFileSync(aeacusDir + "scoring.conf")))
-                            this.props.setData("configFile", fs.readFileSync(aeacusDir + "scoring.conf", "utf-8"))
+                            this.props.setData("configFile", toml.parse(fs.readFileSync(aeacusConfigFile)))
+                            this.props.setData("readme", fs.readFileSync(aeacusReadMeFile, "utf-8"))
+                            this.props.changeView("imageConfig")
 
                             this.setState({
                                 buttonClicked: false
@@ -136,7 +99,8 @@ export default class SetFileServer extends Component {
                         }
                     })
                 })
-                .catch(()=>{
+                .catch((err)=>{
+                    console.log(err)
                     this.handleStatus('Invalid Password')
                     this.setState({
                         buttonClicked: false

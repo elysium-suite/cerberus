@@ -2,6 +2,7 @@
     --backgroundColor: #f1f1f2;
     --primary: #1995AD;
     --secondary: #A1D6E2;
+    --onHover: rgba(161, 214, 226, 0.6);
     --overlayColor: rgba(255, 255, 255, 0.7);
 }
 
@@ -9,5 +10,6 @@
     --backgroundColor: #04202C;
     --primary: #5B7065;
     --secondary: #304040;
+    --onHover: #3a4242;
     --overlayColor: rgba(0, 0, 0, 0.5);
 }

@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import fs from 'fs';
+import toml from 'toml';
+import {aeacusConfigFile, aeacusReadMeFile, aeacusDir} from './configs'
 
 import "bootstrap/dist/css/bootstrap.css"
-
 import "../stylesheets/master.css";
 import "../stylesheets/page.css";
 import "../stylesheets/fadeAnimation.css";
@@ -20,13 +22,25 @@ export default class App extends Component {
         super(props);
 
         this.state = {
-            pageView: "setFileServer",
+            pageView: "",
             visible: true,
             configFile: null,
             readMeFile: null
         }
 
         this.currentTransition = null
+        this.changeView = this.changeView.bind(this)
+        this.setData = this.setData.bind(this)
+    }
+
+    componentWillMount(){
+        if(fs.existsSync(aeacusDir) && fs.existsSync(aeacusConfigFile) && fs.existsSync(aeacusReadMeFile)){
+            this.setData("configFile", toml.parse(fs.readFileSync(aeacusConfigFile)))
+            this.setData("readme", fs.readFileSync(aeacusReadMeFile, "utf-8"))
+            this.changeView("imageConfig")
+        }else{
+            this.changeView("setFileServer")
+        }
     }
 
     changeView(new_view){
@@ -60,11 +74,11 @@ export default class App extends Component {
 
         switch (this.state.pageView) {
             case "setFileServer":
-                currentView = <SetFileServer key="setFileServer" setData={this.setData.bind(this)}/>
+                currentView = <SetFileServer key="setFileServer" setData={this.setData.bind(this)} changeView={this.changeView.bind(this)}/>
                 break;
 
             case "imageConfig":
-                currentView = <ImageConfig key="imageConfig"/>
+                currentView = <ImageConfig key="imageConfig" setData={this.setData.bind(this)} configFile={this.state.configFile} readMeFile={this.state.readMeFile}/>
                 break;
 
             case "releasePage":
