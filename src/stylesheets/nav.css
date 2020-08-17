@@ -1,65 +1,65 @@
-@import "./colors.css";
+@import './colors.css';
 
 .nav ul {
-    width: 95%;
-    list-style-type: none;
-    margin: 0 auto;
-    padding: 0;
-    overflow: hidden;
-    background-color: transparent;
+  width: 95%;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
 
-    text-align: center;
+  text-align: center;
 }
 
 .nav hr {
-    border-radius: 7px;
-    border: 0px solid var(--primary);
-    height: 1px;
-    background: var(--primary);
-    width: 88%;
+  border-radius: 7px;
+  border: 0px solid var(--primary);
+  height: 1px;
+  background: var(--primary);
+  width: 88%;
 
-    margin-top: -7px;
+  margin-top: -7px;
 }
 
 .nav li {
-    display: inline-block;
-    width: 16%;
-    margin-left: 1%;
-    margin-right: 1%;
-    padding: 0;
+  display: inline-block;
+  width: 16%;
+  margin-left: 1%;
+  margin-right: 1%;
+  padding: 0;
 }
 
 .nav p {
-    font-size: 22px;
-    letter-spacing: 2px;
-    font-weight: 500;
-    position: relative;
-    color: var(--primary);
-    text-transform: uppercase;
-    text-align: center;
-    padding: 5px 1px;
-    text-decoration: none;
-    cursor: pointer;
+  font-size: 22px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  position: relative;
+  color: var(--primary);
+  text-transform: uppercase;
+  text-align: center;
+  padding: 5px 1px;
+  text-decoration: none;
+  cursor: pointer;
 
-    transition: 0.5s;
+  transition: 0.5s;
 }
 
 .nav p::after {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 1.3px;
-    top: 100%;
-    left: 0;
-    background: var(--primary);
-    transition: transform 0.5s;
-    transform: scaleX(0);
-    transform-origin: right;
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 1.3px;
+  top: 100%;
+  left: 0;
+  background: var(--primary);
+  transition: transform 0.5s;
+  transform: scaleX(0);
+  transform-origin: right;
 }
 .nav p:hover {
-    color: var(--secondary);
+  color: var(--secondary);
 }
 .nav p:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
+  transform: scaleX(1);
+  transform-origin: left;
 }

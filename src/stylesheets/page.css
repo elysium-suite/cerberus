@@ -1,28 +1,28 @@
 .container {
-    text-align: center;
-    overflow: auto;
-    height: 85vh;
+  text-align: center;
+  overflow: auto;
+  height: 85vh;
 }
 
 .container .title {
-    color: var(--primary);
-    font-size: 30px;
-    font-weight: 400;
+  color: var(--primary);
+  font-size: 30px;
+  font-weight: 400;
 
-    margin-bottom: 4vh;
+  margin-bottom: 4vh;
 }
 
 .container .title::after {
-    content: "";
-    display: block;
-    margin: 0 auto;
-    width: 17%;
-    padding-top: 5px;
-    border-bottom: 1px solid var(--primary);
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 17%;
+  padding-top: 5px;
+  border-bottom: 1px solid var(--primary);
 }
 
 .container .titleSecondary {
-    color: var(--primary);
-    font: 22px;
-    font-weight: 400;
+  color: var(--primary);
+  font: 22px;
+  font-weight: 400;
 }

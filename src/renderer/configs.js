@@ -1,4 +1,4 @@
-import process from 'process';
+import process from 'process'
 
 export const defaultScoringConf = `
 name = "ubuntu-18-supercool"
@@ -38,10 +38,11 @@ superCoolDude
 </pre>
 `
 
-export const aeacusDir = process.platform == "win32" ? "C:\\aeacus\\" : "/opt/aeacus/";
+export const aeacusDir =
+  process.platform === 'win32' ? 'C:\\aeacus\\' : '/opt/aeacus/'
 
 export const currentOS = process.platform
 
-export const aeacusConfigFile = aeacusDir + "scoring.conf"
+export const aeacusConfigFile = `${aeacusDir}scoring.conf`
 
-export const aeacusReadMeFile = aeacusDir + "ReadMe.conf"
+export const aeacusReadMeFile = `${aeacusDir}ReadMe.conf`

@@ -1,12 +1,12 @@
 @font-face {
   font-family: mainFont;
-  src: url("../assets/Cervo-Thin.otf");
+  src: url('../assets/Cervo-Thin.otf');
 }
 
-@import "./colors.css";
+@import './colors.css';
 
 body {
-  font-family: "mainFont", sans-serif;
+  font-family: 'mainFont', sans-serif;
   margin: 0;
   overflow: hidden;
   background-color: transparent;

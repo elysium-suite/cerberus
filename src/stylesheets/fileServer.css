@@ -1,50 +1,50 @@
-@import "./colors.css";
+@import './colors.css';
 
 .server-button {
-    appearance: none;
-    outline: 0;
-    background-color: transparent;
-    color: var(--primary);
-    border: 2px solid var(--primary);
-    padding: 10px 15px;
-    border-radius: 4px;
-    width: 310px;
-    cursor: pointer;
-    font-size: 20px;
-    transition-duration: 0.25s;
+  appearance: none;
+  outline: 0;
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 10px 15px;
+  border-radius: 4px;
+  width: 310px;
+  cursor: pointer;
+  font-size: 20px;
+  transition-duration: 0.25s;
 
-    margin-top: 30px;
+  margin-top: 30px;
 }
-.server-button:hover{
-    background-color: var(--onHover);
-    color: var(--backgroundColor);
+.server-button:hover {
+  background-color: var(--onHover);
+  color: var(--backgroundColor);
 }
 
-::placeholder{
-    color: var(--primary);
-    transition: 0.25s;
+::placeholder {
+  color: var(--primary);
+  transition: 0.25s;
 }
 
 .input-server {
-    outline: 0;
-    background-color: transparent;
-    width: 310px;
+  outline: 0;
+  background-color: transparent;
+  width: 310px;
 
-    border-radius: 4px;
-    border: 2px var(--primary) solid;
-    padding: 10px 15px;
-    margin: 0 auto 15px auto;
+  border-radius: 4px;
+  border: 2px var(--primary) solid;
+  padding: 10px 15px;
+  margin: 0 auto 15px auto;
 
-    font-size: 20px;
+  font-size: 20px;
 
-    color: var(--primary);
+  color: var(--primary);
 
-    transition-duration: 0.25s;
-    font-weight: 300;
+  transition-duration: 0.25s;
+  font-weight: 300;
 }
-.input-server:focus{
-    width: 350px;
+.input-server:focus {
+  width: 350px;
 }
-.input-server:focus::placeholder{
-    color: transparent;
+.input-server:focus::placeholder {
+  color: transparent;
 }

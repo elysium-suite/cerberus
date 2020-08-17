@@ -1,5 +1,3 @@
-'use strict'
-
 import { app, BrowserWindow } from 'electron'
 import * as path from 'path'
 import { format as formatUrl } from 'url'
@@ -19,21 +17,22 @@ function createMainWindow() {
     icon: '../assets/pacman.png',
     webPreferences: {
       nodeIntegration: true,
-      webSecurity: false
+      webSecurity: false,
     },
     frame: false,
-    transparent: true
+    transparent: true,
   })
 
   if (isDevelopment) {
     window.loadURL(`http://localhost:${process.env.ELECTRON_WEBPACK_WDS_PORT}`)
-  }
-  else {
-    window.loadURL(formatUrl({
-      pathname: path.join(__dirname, 'index.html'),
-      protocol: 'file',
-      slashes: true
-    }))
+  } else {
+    window.loadURL(
+      formatUrl({
+        pathname: path.join(__dirname, 'index.html'),
+        protocol: 'file',
+        slashes: true,
+      })
+    )
   }
 
   window.on('closed', () => {
@@ -60,7 +59,7 @@ app.on('activate', () => {
 
 // create main BrowserWindow when electron is ready
 app.on('ready', () => {
-  setTimeout(()=>{
+  setTimeout(() => {
     mainWindow = createMainWindow()
   }, 1000)
 })
