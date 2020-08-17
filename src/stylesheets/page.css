@@ -1,13 +1,10 @@
 .container {
-<<<<<<< HEAD
-    text-align: center;
-    overflow: auto;
-    height: 83vh;
-=======
+  text-align: center;
+  overflow: auto;
+  height: 83vh;
   text-align: center;
   overflow: auto;
   height: 85vh;
->>>>>>> 8eaac656b4bccdf72acb9fc3c0841870022f49b9
 }
 
 .container .title {
