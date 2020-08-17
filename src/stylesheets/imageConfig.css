@@ -1,4 +1,4 @@
-@import "./colors.css";
+@import './colors.css';
 
 .imageConfig-button {
     appearance: none;
@@ -15,43 +15,43 @@
 
     margin-top: 18px;
 }
-.imageConfig-button:hover{
-    background-color: var(--onHover);
-    color: var(--backgroundColor);
+.imageConfig-button:hover {
+  background-color: var(--onHover);
+  color: var(--backgroundColor);
 }
 
 .imageConfig-input {
-    width: 92%;
-    outline: 0;
-    background-color: transparent;
-    width: 310px;
+  width: 92%;
+  outline: 0;
+  background-color: transparent;
+  width: 310px;
 
-    border-radius: 4px;
-    border: 2px var(--primary) solid;
-    padding: 10px 15px;
-    margin: 0 auto 15px auto;
+  border-radius: 4px;
+  border: 2px var(--primary) solid;
+  padding: 10px 15px;
+  margin: 0 auto 15px auto;
 
-    font-size: 20px;
+  font-size: 20px;
 
-    color: var(--primary);
+  color: var(--primary);
 
-    transition-duration: 0.25s;
-    font-weight: 300;
+  transition-duration: 0.25s;
+  font-weight: 300;
 }
-.imageConfig-input:focus{
-    width: 350px;
+.imageConfig-input:focus {
+  width: 350px;
 }
-.imageConfig-input:focus::placeholder{
-    color: transparent;
+.imageConfig-input:focus::placeholder {
+  color: transparent;
 }
 
-.imageConfig-label{
-    font-size: 22px;
-    color: var(--primary);
-    width: 8%;
-    margin-left: -3vw;
+.imageConfig-label {
+  font-size: 22px;
+  color: var(--primary);
+  width: 8%;
+  margin-left: -3vw;
 }
 
 .errorMessage {
-    color: var(--primary);
+  color: var(--primary);
 }

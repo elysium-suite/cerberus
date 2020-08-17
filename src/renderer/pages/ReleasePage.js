@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class ReleasePage extends Component {
-    render() {
-        return (
-            <div className="container">
-                <h1 className="title">Release Image</h1>
-            </div>
-        )
-    }
+const ReleasePage = () => {
+  return (
+    <div className="container">
+      <h1 className="title">Release Image</h1>
+    </div>
+  )
 }
+
+export default ReleasePage

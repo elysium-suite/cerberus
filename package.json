@@ -7,7 +7,11 @@
     "win": "node ./node_modules/electron-webpack/out/dev/dev-runner.js",
     "compile": "electron-webpack",
     "dist": "yarn compile && electron-builder",
-    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
+    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null",
+    "lint": "eslint src/ --fix",
+    "format": "prettier --write src/",
+    "format-ci": "prettier --check src/",
+    "lint-ci": "eslint src/"
   },
   "dependencies": {
     "@emotion/core": "^10.0.34",
@@ -27,13 +31,20 @@
     "source-map-support": "^0.5.16",
     "toml": "^3.0.0",
     "tomlify": "^0.2.2",
-    "unzipper": "^0.10.11"
+    "unzipper": "^0.10.11",
+    "electron": "8.2.0"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.10.4",
-    "electron": "8.2.0",
     "electron-builder": "^22.4.1",
     "electron-webpack": "^2.8.2",
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "prettier": "^2.0.5",
     "webpack": "~4.42.1"
   }
 }
