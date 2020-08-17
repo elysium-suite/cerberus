@@ -7,8 +7,8 @@
 }
 
 [data-theme='dark'] {
-  --backgroundColor: #04202c;
-  --primary: #5b7065;
+  --backgroundColor: #00293C;
+  --primary: #F1F3CE;
   --secondary: #304040;
   --onHover: #3a4242;
   --overlayColor: rgba(0, 0, 0, 0.5);
