@@ -7,9 +7,9 @@ user = "coolUser"
 os = "Ubuntu 18.04"
 remote = "https://192.168.1.100"
 password = "HackersArentReal"
-local = "yes"
+local = "true"
 enddate = "2020/03/21 15:04:05 PDT"
-nodestroy = "yes"
+nodestroy = "true"
 `
 
 export const defaultReadMe = `
