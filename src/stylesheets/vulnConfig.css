@@ -1,0 +1,39 @@
+@import 'colors.css';
+
+.checksContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.check {
+  margin: 1rem;
+  width: 300px;
+  text-align: center;
+}
+
+.vulnConfigButton {
+  appearance: none;
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 10px 15px;
+  border-radius: 4px;
+  width: 290px;
+  cursor: pointer;
+  font-size: 20px;
+  transition-duration: 0.25s;
+
+  margin-bottom: 1vh;
+}
+
+.vulnConfigButton:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+.vulnConfigButton:hover {
+  background-color: var(--onHover);
+  color: var(--backgroundColor);
+}

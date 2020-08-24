@@ -16,20 +16,20 @@ export default class NavBar extends Component {
             <p>File Server</p>
           </li>
           <li
-            id="vulnConfig"
-            onClick={() => {
-              this.props.changeView('vulnConfig')
-            }}
-          >
-            <p>Vulnerabilities</p>
-          </li>
-          <li
             id="imageConfig"
             onClick={() => {
               this.props.changeView('imageConfig')
             }}
           >
             <p>Image Configs</p>
+          </li>
+          <li
+            id="vulnConfig"
+            onClick={() => {
+              this.props.changeView('vulnConfig')
+            }}
+          >
+            <p>Vulnerabilities</p>
           </li>
           <li
             id="releasePage"

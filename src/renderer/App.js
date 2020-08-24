@@ -62,6 +62,7 @@ export default class App extends Component {
   }
 
   setData(type, data) {
+    console.log(this.state, data)
     if (type === 'readme') {
       this.setState({
         readMeFile: data,
@@ -93,7 +94,6 @@ export default class App extends Component {
             key="imageConfig"
             setData={this.setData.bind(this)}
             configFile={this.state.configFile}
-            readMeFile={this.state.readMeFile}
           />
         )
         break
@@ -103,7 +103,13 @@ export default class App extends Component {
         break
 
       case 'vulnConfig':
-        currentView = <VulnConfig key="vulnConfig" />
+        currentView = (
+          <VulnConfig
+            key="vulnConfig"
+            configFile={this.state.configFile}
+            setData={this.setData.bind(this)}
+          />
+        )
         break
 
       case 'settings':
