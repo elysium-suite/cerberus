@@ -1,6 +1,11 @@
-## Cerberus
+# Cerberus
 
-For devs:
+### Project Description
+
+A GUI wrapper for Aeacus to assist with engine installation, image development, and vulnerability configuration.
+
+
+### Development Instructions:
 
 Linux:
 
