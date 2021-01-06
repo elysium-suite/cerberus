@@ -16,7 +16,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.34",
     "@types/react-transition-group": "^4.4.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.2",
     "electron": "8.5.2",
     "fs": "^0.0.1-security",
