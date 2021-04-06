@@ -1,5 +1,7 @@
 # Cerberus
 
+> NOTE: Cerberus has been deprecated due to a lack of development. Please refer to the `aeacus` docs for details on how to configure your images.
+
 ### Project Description
 
 A GUI wrapper for Aeacus to assist with engine installation, image development, and vulnerability configuration.
